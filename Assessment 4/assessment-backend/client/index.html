@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Back End Assessment</title>
+    <title>Feel Good Page</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+    <div>
+      <div>
+        <img src="images/oprah.jpg" />
+        <img src="images/fortune.jpg" />
+        <img src="images/destination.jpg" />
+      </div>
+      <div>
+        <button id="complimentButton">Get a compliment</button>
+        <button id="destinationButton">Get a Travel Destination</button>
+        <button id="fortuneButton">Get a Fortune</button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <h4>What Country do you want to go to?</h4>
+    <form>
+      <select name="Country_Categories" id="Country_Categories">
+        <option value="1" selcted="select">select</option>
+        <option value="1">Italy</option>
+        <option value="2">France</option>
+        <option value="3">Thailand</option>
+        <option value="4">Singapore</option>
+        <option value="5">Pick a Random Country</option>
+      </select>
+      <div>
+        <p>Why do you want to go to this Country?</p>
+        <input type="text" id="title" />
+      </div>
+      <input type="submit" id="submitBtn" />
+    </form>
+    <div class="boxed">
+      <section id="country-container"></section>
+    </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
-    
   </body>
 </html>
