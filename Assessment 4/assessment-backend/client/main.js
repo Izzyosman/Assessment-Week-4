@@ -7,5 +7,4 @@ const getCompliment = () => {
             alert(data);
     });
 };
-
 complimentBtn.addEventListener('click', getCompliment)
