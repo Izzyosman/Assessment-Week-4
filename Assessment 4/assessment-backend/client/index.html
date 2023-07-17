@@ -27,7 +27,7 @@
           <img src="../_build/handouts/_images/fortune.jpg" />
         </div>
         <div>
-          <button id="getafortuneButton">Get a Fortune</button>
+          <button id="fortuneButton">Get a Fortune</button>
         </div>
       </div>
       <br />
@@ -36,93 +36,25 @@
           <img src="../_build/handouts/_images/destination.jpg" />
         </div>
         <div>
-          <button id="getatraveldestinationButton">Get a Destination</button>
+          <button id="destinationButton">Get a Destination</button>
         </div>
       </div>
     </div>
     <br />
     <div>
       <h4>What Country do you want to go to?</h4>
-      <form>
+      <form method="POST" action="/api/destination">
         <select name="Country_Categories" id="Country_Categories">
           <option value="1" selcted="select">select</option>
-          <option value="1">Italy</option>
-          <option value="2">France</option>
-          <option value="3">Thailand</option>
-          <option value="4">Singapore</option>
-          <option value="5">Pick a Random Country</option>
+          <option value="2">Italy</option>
+          <option value="3">France</option>
+          <option value="4">Thailand</option>
+          <option value="5">Singapore</option>
         </select>
-        <div>
-          <p>Why do you want to go to this Country?</p>
-          <input type="text" id="title" />
-        </div>
-        <input type="submit" id="submitBtn" />
+        <input type="submit" id="createDestination" />
       </form>
     </div>
-    <div class="boxed">
-      <section id="country-container"></section>
-    </div>
 
-    <script>
-      // Function to get a compliment button
-      function getacomplimentAlert(evt) {
-        var list = [
-          "You are incredibly talented!",
-          "Your positivity is contagious!",
-          "You have a great sense of style!",
-        ];
-        var random = list[Math.floor(Math.random() * list.length)];
-        evt.preventDefault();
-
-        alert("Compliment: " + random);
-      }
-
-      // Add event listener to the button
-      var getacomplimentButton = document.getElementById(
-        "getacomplimentButton"
-      );
-
-      getacomplimentButton.addEventListener("click", getacomplimentAlert);
-    </script>
-
-    <script>
-      // Function to get a travel destination button
-      function getatraveldestinationAlert(evt) {
-        var list = ["Italy", "France", "Thailand", "Singapore"];
-        evt.preventDefault();
-        var random = list[Math.floor(Math.random() * list.length)];
-
-        alert("Country: " + random);
-      }
-
-      // Add event listener to the button
-      var getatraveldestinationButton = document.getElementById(
-        "getatraveldestinationButton"
-      );
-      getatraveldestinationButton.addEventListener(
-        "click",
-        getatraveldestinationAlert
-      );
-    </script>
-
-    <script>
-      // Function to get a fortune button
-      function getafortuneAlert(evt) {
-        var list = [
-          "All your hard work will soon pay off.",
-          "You will be very successful soon.",
-          "A lifetime of happiness lies ahead of you.",
-        ];
-        evt.preventDefault();
-        var random = list[Math.floor(Math.random() * list.length)];
-
-        alert("Fortune: " + random);
-      }
-
-      // Add event listener to the button
-      var getafortuneButton = document.getElementById("getafortuneButton");
-      getafortuneButton.addEventListener("click", getafortuneAlert);
-    </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
