@@ -7,14 +7,87 @@
   <body class="container">
     <div>
       <div>
-        <img src="images/oprah.jpg" />
-        <img src="images/fortune.jpg" />
-        <img src="images/destination.jpg" />
+        <img
+          src="Assessment 4/assessment-backend/_build/handouts/_images/oprah.jpg"
+        />
+        <img
+          src="Assessment 4/assessment-backend/_build/handouts/_images/fortune.jpg"
+        />
+        <img
+          src="Assessment 4/assessment-backend/_build/handouts/_images/destination.jpg"
+        />
       </div>
       <div>
-        <button id="complimentButton">Get a compliment</button>
-        <button id="destinationButton">Get a Travel Destination</button>
-        <button id="fortuneButton">Get a Fortune</button>
+        <button id="getacomplimentButton">Get a compliment</button>
+
+        <script>
+          // Function to get a compliment button
+          function getacomplimentButton() {
+            var list = [
+              "You are incredibly talented!",
+              "Your positivity is contagious!",
+              "You have a great sense of style!",
+            ];
+            var random = list[Math.floor(Math.random() * list.length)];
+
+            alert("getacomplimentButton: " + random);
+          }
+
+          // Add event listener to the button
+          var getacomplimentButton = document.getElementById(
+            "getacomplimentButton"
+          );
+          getacomplimentButton.addEventListener("click", getacomplimentButton);
+        </script>
+
+        <button id="getatraveldestinationButton">
+          Get a Travel Destination
+        </button>
+
+        <script>
+          // Function to get a travel destination button
+          function getatraveldestinationButton() {
+            var list = [
+              "Italy",
+              "France",
+              "Thailand",
+              "Singapore",
+              "Pick a random country",
+            ];
+            var random = list[Math.floor(Math.random() * list.length)];
+
+            alert("getatraveldestinationButton: " + random);
+          }
+
+          // Add event listener to the button
+          var getatraveldestinationButton = document.getElementById(
+            "getatraveldestinationButton"
+          );
+          getatraveldestinationButton.addEventListener(
+            "click",
+            getatraveldestinationButton
+          );
+        </script>
+
+        <button id="getafortuneButton">Get a Fortune</button>
+
+        <script>
+          // Function to get a fortune button
+          function getafortuneButton() {
+            var list = [
+              "All your hard work will soon pay off.",
+              "You will be very successful soon.",
+              "A lifetime of happiness lies ahead of you.",
+            ];
+            var random = list[Math.floor(Math.random() * list.length)];
+
+            alert("getafortuneButton: " + random);
+          }
+
+          // Add event listener to the button
+          var getafortuneButton = document.getElementById("getafortuneButton");
+          getafortuneButton.addEventListener("click", getafortuneButton);
+        </script>
       </div>
     </div>
     <br />

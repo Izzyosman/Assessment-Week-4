@@ -22,7 +22,7 @@ module.exports = {
 
     },
     getFortune: (req, res) => {
-        const fortunes = ["All your hard work will soon pay off.", "All your hard work will soon pay off.","A lifetime of happiness lies ahead of you."];
+        const fortunes = ["All your hard work will soon pay off.", "You will be very successful soon.", "A lifetime of happiness lies ahead of you."];
     
         let randomIndex = Math.floor(Math.random() * fortunes.length);
         let randomFortune = fortunes[randomIndex];
