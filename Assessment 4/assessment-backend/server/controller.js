@@ -1,12 +1,10 @@
-const compliments = [];
-const destinations = [];
-const fortunes = [];
+const compliments = ["You are so smart!", "You are cool!", "You are funny!"];
+const destinations = ["Italy","France","Thailand","Singapore"]; 
+const fortunes = ["All your hard work will soon pay off.", "You will be very successful soon.", "A lifetime of happiness lies ahead of you.", "Good luck will come to you.", "This year will end on a good note for you."];
 let globalID = 0;
 
 module.exports = {
-    getCompliment: (req, res) => {
-        const compliments = ["You are so smart!", "You are cool!", "You are funny!"];
-      
+    getCompliment: (req, res) => {      
         // choose random compliment
         let randomIndex = Math.floor(Math.random() * compliments.length);
         let randomCompliment = compliments[randomIndex];
@@ -14,17 +12,16 @@ module.exports = {
          res.status(200).send(randomCompliment);
     },
     getDestination: (req,res)=>{
-        const destination = ["Italy","France","Thailand","Singapore","Pick a random Country" ] 
-
-        let randomIndex1 = Math.floor(Math.random() * destination.length);
-        let randomDestination = destination[randomIndex1];
+        let randomIndex1 = Math.floor(Math.random() * destinations.length);
+        let randomDestination = destinations[randomIndex1];
 
         res.status(200).send(randomDestination);
 
     },
-    getFortune: (req, res) => {
-        const fortunes = ["All your hard work will soon pay off.", "You will be very successful soon.", "A lifetime of happiness lies ahead of you.", "Good luck will come to you.", "This year will end on a good note for you."];
-    
+    getDestinations: (req,res)=>{
+        res.status(200).send(destinations);
+    },
+    getFortune: (req, res) => {    
         let randomIndex = Math.floor(Math.random() * fortunes.length);
         let randomFortune = fortunes[randomIndex];
       
@@ -37,37 +34,21 @@ module.exports = {
         res.status(200).send(submit)
     },
     createCompliment: (req,res) => {
-        const {title} = req.body;
-        let newCompliment = {
-            id:globalID,
-            title
-        }
-        compliments.push(newCompliment);
+        const {compliment} = req.body;
+        compliments.push(compliment);
 
-        globalID++;
         res.status(200).send(compliments)
     },
     createDestination: (req,res) => {
-        const {title} = req.body;
-        let destination = {
-            id:globalID,
-            title
-        }
-        destinations.push(destination);
+        const {country} = req.body;
+        destinations.push(country);
 
-        globalID++;
         res.status(200).send(destinations)
     },
-
     createFortune: (req,res) => {
-        const {title} = req.body;
-        let newFortune = {
-            id:globalID,
-            title
-        }
-        fortunes.push(newFortune);
+        const {fortune} = req.body;
+        fortunes.push(compliment);
 
-        globalID++;
         res.status(200).send(fortunes)
     },
 
@@ -88,9 +69,8 @@ module.exports = {
         res.status(200).send(destinations)
     },
     updateDestinations: (req,res) => {
-        const {type} = req.body;
-        let index = destinations.findindex(elem => elem.id === +req.params.id);
-        destinations[index] = type;
+        const {destination} = req.body;
+        destinations.push(destination);
         res.status(200).send(destinations);
     }, 
     deleteFortunes: (req,res) => {

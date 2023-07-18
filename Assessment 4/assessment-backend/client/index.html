@@ -16,9 +16,7 @@
           <img src="../_build/handouts/_images/oprah.jpg" />
         </div>
         <div>
-          <button onclick="complimentBtn()" id="complimentButton">
-            Get a compliment
-          </button>
+          <button id="complimentButton">Get a compliment</button>
         </div>
       </div>
       <br />
@@ -41,18 +39,52 @@
       </div>
     </div>
     <br />
-    <div>
-      <h4>What Country do you want to go to?</h4>
-      <form method="POST" action="/api/destination">
-        <select name="Country_Categories" id="Country_Categories">
-          <option value="1" selcted="select">select</option>
-          <option value="2">Italy</option>
-          <option value="3">France</option>
-          <option value="4">Thailand</option>
-          <option value="5">Singapore</option>
+    <!-- <div>
+      <h4>Say something nice?</h4>
+      <form id="destinationsForm">
+        <select name="country" id="country">
+          <option value="Spain">Spain</option>
+          <option value="Japan">Japan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Australia">Australia</option>
         </select>
         <input type="submit" id="createDestination" />
       </form>
+      <div id="messageDestination"></div>
+    </div> -->
+    <div>
+      <div>
+        <h4>What Country do you want to go to?</h4>
+        <form id="destinationsForm">
+          <select name="country" id="country">
+            <option value="Spain">Spain</option>
+            <option value="Japan">Japan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Australia">Australia</option>
+          </select>
+          <input type="submit" value="Submit" id="createDestination" />
+        </form>
+        <div id="messageDestination"></div>
+      </div>
+      <br />
+      <div style="padding-top: 50px">
+        <h4>Delete Destinations</h4>
+        <button type="button" id="deleteButton">Delete Destinations</button>
+      </div>
+      <br />
+      <div>
+        <h4>Current Destinations</h4>
+        <div id="messageDestinationDelete"></div>
+      </div>
+      <br />
+      <div style="padding-top: 50px">
+        <h4>Update Destinations List by adding your own!</h4>
+        <form id="destinationsUpdateForm">
+          <label for="destinationUpdate">Update Destinations List</label>
+          <textarea id="destinationUpdate" name="destinationUpdate"></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

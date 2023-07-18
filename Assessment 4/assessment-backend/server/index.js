@@ -11,6 +11,7 @@ const { getCompliment } = require("./controller");
 const { getsubmit } = require("./controller");
 const { getFortune } = require("./controller");
 const { getDestination } = require('./controller');
+const { getDestinations } = require('./controller');
 const { createDestination } = require('./controller');
 const { createCompliment } = require('./controller');
 const { createFortune } = require('./controller');
@@ -25,6 +26,7 @@ const { updateFortunes } = require('./controller');
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
 app.get("/api/destination", getDestination);
+app.get("/api/destinations", getDestinations);
 app.post("/api/submit", getsubmit);
 
 // Create 
